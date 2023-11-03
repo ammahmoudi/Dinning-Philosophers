@@ -9,14 +9,7 @@ group 'com.amg'
 version '1.0-SNAPSHOT'
 //create a single Jar with all dependencies
 mainClassName='com.amg.dinningroom.Main'
-jar {
-    manifest {
-        attributes 'Main-Class': 'com.amg.dinningroom.Main'
-    }
-    from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}
+
 
 repositories {
     mavenCentral()
@@ -35,7 +28,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'com.amg.dinningroom'
-    mainClass = 'com.amg.dinningroom.HelloApplication'
+    mainClass = 'com.amg.dinningroom.ServerApplication'
 }
 
 javafx {

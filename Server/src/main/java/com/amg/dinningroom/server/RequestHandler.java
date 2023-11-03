@@ -51,7 +51,7 @@ class RequestHandler {
             case ALIVE_CONNECTION:
                 if (dinningRoom.started) {
                     sendResponse(philosopherHandler.getPrintWriter(), new Response(ResponseType.STARTED, "yes you Are alive :)"));
-                    dinningRoom.mainController.getConsole().appendText("Sending start message to Client " + philosopherHandler.getPhilosopher().getpId() + "\n");
+//                    dinningRoom.mainController.getConsole().appendText("Sending start message to Client " + philosopherHandler.getPhilosopher().getpId() + "\n");
                 } else
                     sendResponse(philosopherHandler.getPrintWriter(), new Response(ResponseType.ALIVE_CONNECTION, "yes you Are alive :)"));
                 break;
@@ -93,7 +93,7 @@ class RequestHandler {
                 Response response = new Response(ResponseType.STARTED, JSonController.objectToStringMapper(philosopherHandler.getPhilosopher()));
                 dinningRoom.started = true;
                 sendResponse(philosopherHandler.getPrintWriter(), response);
-                dinningRoom.mainController.getConsole().appendText("Client " + philosopherHandler.getPhilosopher().getpId() + " has started the game.\n");
+//                dinningRoom.mainController.getConsole().appendText("Client " + philosopherHandler.getPhilosopher().getpId() + " has started the game.\n");
                 dinningRoom.updateHBoxes();
                 dinningRoom.startTable();
                 dinningRoom.startchart();
